@@ -1,0 +1,8 @@
+<use name=Alignment/CommonAlignment>
+<use name=Alignment/SurveyAnalysis>
+<use name=FWCore/Framework>
+<use name=FWCore/ParameterSet>
+
+<library name=SurveyTest file=SurveyTest.cc,AlignableTest.cc>
+   <flags SEAL_PLUGIN_NAME="SurveyTest">
+</library>
