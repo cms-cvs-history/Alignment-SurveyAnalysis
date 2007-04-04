@@ -1,7 +1,24 @@
+<use name=root>
+<use name=Geometry/TrackerNumberingBuilder>
 <use name=Alignment/CommonAlignment>
 <use name=Alignment/SurveyAnalysis>
-<use name=FWCore/Framework>
-<use name=FWCore/ParameterSet>
+<use name=CondFormats/Alignment>
+<use name=CondFormats/DataRecord>
+
+<use name=FWCore/Framework> 
+<use name=FWCore/MessageLogger> 
+
+<library file=TestConverter.cpp name=testSurveyConverter>
+  <flags SEAL_PLUGIN_NAME="testSurveyConverter">
+</library>
+
+<library file=TestIdealGeometry.cpp name=testIdeal>
+  <flags SEAL_PLUGIN_NAME="testIdeal">
+</library>
+
+<library file=TestIdealGeometry2.cpp name=testIdeal2>
+  <flags SEAL_PLUGIN_NAME="testIdeal2">
+</library>
 
 <library name=SurveyTest file=SurveyTest.cc,AlignableTest.cc>
    <flags SEAL_PLUGIN_NAME="SurveyTest">
