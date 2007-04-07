@@ -5,8 +5,8 @@
  *
  *  For testing of survey analysis.
  *
- *  $Date: 2007/01/28 $
- *  $Revision: 1 $
+ *  $Date: 2007/03/14 18:05:36 $
+ *  $Revision: 1.1 $
  *  \author Chung Khim Lae
  */
 
@@ -18,6 +18,8 @@ class AlignableTest:
   public:
 
   AlignableTest() {}
+
+  virtual ~AlignableTest();
 
   AlignableTest(const AlignableSurface&, int id);
 

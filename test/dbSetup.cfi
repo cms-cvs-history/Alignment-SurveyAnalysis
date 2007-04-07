@@ -1,0 +1,10 @@
+include "CondCore/DBCommon/data/CondDBSetup.cfi"
+
+block dbSetup =
+{
+  using CondDBSetup
+
+  string connect  = "sqlite_file:Alignments.db"    
+  string timetype = "runnumber"    
+  untracked string catalog = "file:condbcatalog.xml"
+}
