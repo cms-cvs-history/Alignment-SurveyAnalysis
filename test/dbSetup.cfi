@@ -4,7 +4,7 @@ block dbSetup =
 {
   using CondDBSetup
 
-  string connect  = "sqlite_file:Alignments.db"    
+  string connect  = "sqlite_file:../Alignments.db"    
   string timetype = "runnumber"    
-  untracked string catalog = "file:condbcatalog.xml"
+  untracked string catalog = "file:../condbcatalog.xml"
 }
