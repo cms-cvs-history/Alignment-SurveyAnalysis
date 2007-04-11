@@ -91,6 +91,7 @@ my @dSides = ( "back", "front" );
 
 my $TIDoutput = "TID".$outputFile;
 open ( OUTPUT,">$TIDoutput" ) or die "Couldn't open $TIDoutput: $!";
+print "Writing output to $TIDoutput\n";
 
 # Loop on all TID files
 for ( my $iRing = 1; $iRing<=$nTidRings; $iRing++ ) {
@@ -132,6 +133,9 @@ for ( my $iRing = 1; $iRing<=$nTidRings; $iRing++ ) {
     }
   }
 }
+
+close(OUTPUT) or die "Couldn't close $TIDoutput: $!";
+print $TIDoutput." all done\n";
 
 #_______________________________________________________________________________
 # Extract data from input text, sort it according to string and module
