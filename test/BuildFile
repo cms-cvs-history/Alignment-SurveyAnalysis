@@ -8,7 +8,7 @@
 <use name=FWCore/MessageLogger> 
 <use name=Geometry/TrackerNumberingBuilder>
 
-<library name=SurveyAnalysisTest file=AlignableTest.cc,SurveyInputTest.cc,SurveyInputTrackerFromDB.cc,SurveyTest.cc,SealModules.cc>
+<library name=SurveyAnalysisTest file=AlignableTest.cc,SurveyInputTest.cc,SurveyInputTrackerFromDB.cc,SurveyTest.cc,Modules.cc>
    <flags EDM_PLUGIN=1>
 </library>
 
