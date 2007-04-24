@@ -8,3 +8,6 @@ block dbSetup =
   string timetype = "runnumber"    
   untracked string catalog = "file:../condbcatalog.xml"
 }
+
+block valueRcd = { string record = "TrackerSurveyRcd"      string tag = "valueTag" }
+block errorRcd = { string record = "TrackerSurveyErrorRcd" string tag = "errorTag" }
