@@ -16,7 +16,7 @@
 //
 // Original Author:  Pablo Martinez Ruiz Del Arbol
 //         Created:  Wed Mar 28 09:50:08 CEST 2007
-// $Id$
+// $Id: DTSurveyConvert.cpp,v 1.1 2007/04/13 14:36:08 pablom Exp $
 //
 //
 
@@ -29,7 +29,7 @@
 // user include files
 #include "FWCore/Framework/interface/Frameworkfwd.h"
 #include "FWCore/Framework/interface/EDAnalyzer.h"
-//#include "Alignment/MuonAlignment/interface/MuonAlignment.h"
+#include "Alignment/MuonAlignment/interface/MuonAlignment.h"
 
 #include "FWCore/Framework/interface/Event.h"
 #include <FWCore/Framework/interface/EventSetup.h>
@@ -41,7 +41,6 @@
 #include <Geometry/DTGeometry/interface/DTGeometry.h>
 #include <Geometry/Records/interface/MuonGeometryRecord.h>
 
-#include "Alignment/SurveyAnalysis/interface/DTSurveyChamber.h"
 #include "Alignment/SurveyAnalysis/interface/DTSurvey.h"
 
 
@@ -58,7 +57,7 @@ class DTSurveyConvert : public edm::EDAnalyzer {
    private:
       virtual void beginJob(const edm::EventSetup&) ;
       virtual void analyze(const edm::Event&, const edm::EventSetup&);
-      virtual void endJob() ;
+      virtual void endJob(const edm::EventSetup&);
       std::vector<DTSurvey *> wheelList;
       string nameWheel_m2; 
       string nameWheel_m1; 
@@ -187,14 +186,32 @@ DTSurveyConvert::beginJob(const edm::EventSetup& eventSetup)
 
 // ------------ method called once each job just after ending the event loop  ------------
 void 
-DTSurveyConvert::endJob() {
+DTSurveyConvert::endJob(const edm::EventSetup& eventSetup) {
+  if(WriteToDB == true) {
+    // Instantiate the helper class
+    MuonAlignment align( eventSetup );
+    std::ifstream inFile(outputFileName.c_str());
+    while(!inFile.eof()) {
+      float dx, dy, dz, sigma_dx, sigma_dy, sigma_dz;
+      float alpha, beta, gamma, sigma_alpha, sigma_beta, sigma_gamma;
+      inFile >> dx >> sigma_dx >> dy >> sigma_dy >> dz >> sigma_dz
+             >> alpha >> sigma_alpha >> beta >> sigma_beta >> gamma >> sigma_gamma; 
+      if(inFile.eof()) break;
+      vector<float> displacement;
+      vector<float> rotation;
+      displacement.push_back(dx);
+      displacement.push_back(dy);
+      displacement.push_back(dz);
+      displacement.push_back(alpha);
+      displacement.push_back(beta);
+      displacement.push_back(gamma);
+    }
+    inFile.close();
+    align.saveToDB();
+  }
 }
 
-
-
 DEFINE_FWK_MODULE(DTSurveyConvert);
-
-
 
 #endif
 
