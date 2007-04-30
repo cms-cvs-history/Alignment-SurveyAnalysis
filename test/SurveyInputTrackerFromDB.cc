@@ -4,7 +4,7 @@
 #include "Geometry/Records/interface/IdealGeometryRecord.h"
 #include "Geometry/TrackerGeometryBuilder/interface/TrackerGeomBuilderFromGeometricDet.h"
 
-#include "SurveyInputTrackerFromDB.h"
+#include "Alignment/SurveyAnalysis/test/SurveyInputTrackerFromDB.h"
 
 void SurveyInputTrackerFromDB::beginJob(const edm::EventSetup& setup)
 {
@@ -31,5 +31,5 @@ void SurveyInputTrackerFromDB::addSurveyInfo(Alignable* ali)
 
   align::ErrorMatrix error = ROOT::Math::SMatrixIdentity();
 
-  ali->setSurvey( new SurveyDet(ali->surface(), error * 1e-3) );
+  ali->setSurvey( new SurveyDet(ali->surface(), error *= 1e-6) );
 }
