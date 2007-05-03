@@ -9,17 +9,17 @@
 <use name=Geometry/TrackerNumberingBuilder>
 
 <library name=SurveyAnalysisTest file=AlignableTest.cc,SurveyDBReader.cc,SurveyInputTest.cc,SurveyInputTrackerFromDB.cc,SurveyTest.cc,Modules.cc>
-   <flags SEAL_PLUGIN_NAME="SurveyAnalysisTest">
+   <flags EDM_PLUGIN=1>
 </library>
 
 <library file=TestConverter.cpp name=testSurveyConverter>
-  <flags SEAL_PLUGIN_NAME="testSurveyConverter">
+  <flags EDM_PLUGIN=1>
 </library>
 
 <library file=TestIdealGeometry.cpp name=testIdeal>
-  <flags SEAL_PLUGIN_NAME="testIdeal">
+  <flags EDM_PLUGIN=1>
 </library>
 
 <library file=TestIdealGeometry2.cpp name=testIdeal2>
-  <flags SEAL_PLUGIN_NAME="testIdeal2">
+  <flags EDM_PLUGIN=1>
 </library>
