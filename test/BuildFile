@@ -8,18 +8,18 @@
 <use name=FWCore/MessageLogger> 
 <use name=Geometry/TrackerNumberingBuilder>
 
-<library name=SurveyAnalysisTest file=AlignableTest.cc,SurveyInputTest.cc,SurveyInputTrackerFromDB.cc,SurveyTest.cc,Modules.cc>
-   <flags EDM_PLUGIN=1>
+<library name=SurveyAnalysisTest file=AlignableTest.cc,SurveyDBReader.cc,SurveyInputTest.cc,SurveyInputTrackerFromDB.cc,SurveyTest.cc,Modules.cc>
+   <flags SEAL_PLUGIN_NAME="SurveyAnalysisTest">
 </library>
 
 <library file=TestConverter.cpp name=testSurveyConverter>
-  <flags EDM_PLUGIN=1>
+  <flags SEAL_PLUGIN_NAME="testSurveyConverter">
 </library>
 
 <library file=TestIdealGeometry.cpp name=testIdeal>
-  <flags EDM_PLUGIN=1>
+  <flags SEAL_PLUGIN_NAME="testIdeal">
 </library>
 
 <library file=TestIdealGeometry2.cpp name=testIdeal2>
-  <flags EDM_PLUGIN=1>
+  <flags SEAL_PLUGIN_NAME="testIdeal2">
 </library>
