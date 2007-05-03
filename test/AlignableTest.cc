@@ -1,4 +1,4 @@
-#include "AlignableTest.h"
+#include "Alignment/SurveyAnalysis/test/AlignableTest.h"
 
 AlignableTest::AlignableTest(const AlignableSurface& surface, int type):
   theType(type)
