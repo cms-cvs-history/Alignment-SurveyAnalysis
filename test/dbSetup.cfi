@@ -9,5 +9,7 @@ block dbSetup =
   untracked string catalog = "file:../condbcatalog.xml"
 }
 
-block valueRcd = { string record = "TrackerSurveyRcd"      string tag = "valueTag" }
-block errorRcd = { string record = "TrackerSurveyErrorRcd" string tag = "errorTag" }
+block surveyValueRcd = { string record = "TrackerSurveyRcd"      string tag = "valueTag" }
+block surveyErrorRcd = { string record = "TrackerSurveyErrorRcd" string tag = "errorTag" }
+block alignValueRcd = { string record = 'TrackerAlignmentRcd'      string tag = "alignValue" }
+block alignErrorRcd = { string record = 'TrackerAlignmentErrorRcd' string tag = "alignError" }
