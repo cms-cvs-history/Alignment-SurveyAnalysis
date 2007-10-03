@@ -2,7 +2,7 @@
 <use name=Alignment/CommonAlignment>
 <use name=Alignment/SurveyAnalysis>
 <use name=CondFormats/Alignment>
-<use name=CondFormats/DataRecord>
+<use name=CondFormats/AlignmentRecord>
 <use name=FWCore/Framework>
 <use name=FWCore/ParameterSet>
 <use name=FWCore/MessageLogger> 
