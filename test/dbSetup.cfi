@@ -6,6 +6,7 @@ block dbSetup =
 
   string connect  = "sqlite_file:../Alignments.db"    
   string timetype = "runnumber"    
+  untracked string catalog = "file:../condbcatalog.xml"
 }
 
 block surveyValueRcd = { string record = "TrackerSurveyRcd"      string tag = "valueTag" }
