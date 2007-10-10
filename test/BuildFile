@@ -6,9 +6,9 @@
 <use name=FWCore/Framework>
 <use name=FWCore/ParameterSet>
 <use name=FWCore/MessageLogger> 
-<use name=Geometry/TrackerNumberingBuilder>
+<use name=Geometry/TrackerGeometryBuilder>
 
-<library name=SurveyAnalysisTest file=AlignableTest.cc,SurveyDBReader.cc,SurveyInputDummy.cc,SurveyInputTest.cc,SurveyTest.cc,Modules.cc>
+<library name=AlignmentSurveyAnalysisTest file=*.cc>
    <flags EDM_PLUGIN=1>
 </library>
 
