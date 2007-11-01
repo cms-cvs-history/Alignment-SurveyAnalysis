@@ -7,7 +7,7 @@
 #include "Alignment/TrackerAlignment/interface/AlignableTracker.h"
 
 #include "CondFormats/Alignment/interface/Alignments.h"
-#include "CondFormats/AlignmentRecord/interface/TrackerAlignmentRcd.h"
+#include "CondFormats/DataRecord/interface/TrackerAlignmentRcd.h"
 
 #include "FWCore/Framework/interface/EventSetup.h"
 #include "FWCore/MessageLogger/interface/MessageLogger.h"
@@ -25,7 +25,9 @@ void SurveyMisalignmentInput::beginJob(const edm::EventSetup& setup)
 
   edm::ESHandle<GeometricDet>  geom;
   setup.get<IdealGeometryRecord>().get(geom);	 
-  TrackerGeometry* tracker = TrackerGeomBuilderFromGeometricDet().build(&*geom);
+  edm::ESHandle<DDCompactView> cpv;
+  setup.get<IdealGeometryRecord>().get( cpv );
+  TrackerGeometry* tracker = TrackerGeomBuilderFromGeometricDet().build(&*cpv,&*geom);
   addComponent(new AlignableTracker( tracker ) );
 
   edm::LogInfo("SurveyMisalignmentInput") << "Starting!";
