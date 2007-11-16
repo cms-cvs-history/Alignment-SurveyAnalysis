@@ -30,7 +30,7 @@ void SurveyAlignmentAlgorithm::initialize(const edm::EventSetup&,
 
   SurveyAlignmentSensor align(store->alignables(), levels);
 
-  align.iterate(theIterations, theOutfile, true);
+  align.iterate(theIterations, theOutfile);
 }
 
 // Plug in to framework
