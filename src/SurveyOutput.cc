@@ -1,6 +1,6 @@
 #include <sstream>
 
-#include "TNtupleD.h"
+#include "TNtuple.h"
 
 #include "Alignment/CommonAlignment/interface/Alignable.h"
 // #include "Alignment/CommonAlignment/interface/AlignmentParameters.h"
@@ -23,19 +23,23 @@ void SurveyOutput::write(unsigned int iter)
 
   o << 't' << iter;
 
-  TNtupleD* nt = new TNtupleD(o.str().c_str(), "", "id:x:y:z:a:b:g");
+  TNtuple* nt = new TNtuple(o.str().c_str(), "", "x:y:z:a:b:g");
 
-  unsigned int N = theAlignables.size();
+  int N = theAlignables.size();
 
-  for (unsigned int i = 0; i < N; ++i)
+  for (int i = 0; i < N; ++i)
   {
-    const Alignable* ali = theAlignables[i];
+    Alignable* ali = theAlignables[i];
 
-    const align::GlobalVector& shifts = ali->displacement();
+    const PositionType& pos0 = ali->survey()->position();
+    const PositionType& pos1 = ali->globalPosition();
+    const RotationType& rot0 = ali->survey()->rotation();
+    const RotationType& rot1 = ali->globalRotation();
 
-    EulerAngles angles = toAngles( ali->rotation() );
+    align::GlobalVector shifts = pos1 - pos0;
+    EulerAngles angles = toAngles( rot0.multiplyInverse(rot1) );
 
-    nt->Fill( ali->id(), shifts.x(), shifts.y(), shifts.z(),
+    nt->Fill( shifts.x(), shifts.y(), shifts.z(),
 	      angles(1), angles(2), angles(3) );
 //     const AlgebraicVector& pars = ali->alignmentParameters()->parameters();
 
