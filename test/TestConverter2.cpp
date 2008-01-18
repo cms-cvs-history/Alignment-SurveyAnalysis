@@ -32,11 +32,9 @@
 #include "Geometry/Records/interface/TrackerDigiGeometryRecord.h"
 
 #include "CondFormats/Alignment/interface/Alignments.h"
-#include <boost/cstdint.hpp> 
 #include "CondFormats/Alignment/interface/AlignmentErrors.h"
-#include "CLHEP/Vector/RotationInterfaces.h" 
-#include "CondFormats/AlignmentRecord/interface/TrackerAlignmentRcd.h"
-#include "CondFormats/AlignmentRecord/interface/TrackerAlignmentErrorRcd.h"
+#include "CondFormats/DataRecord/interface/TrackerAlignmentRcd.h"
+#include "CondFormats/DataRecord/interface/TrackerAlignmentErrorRcd.h"
 
 #include "DataFormats/SiStripDetId/interface/TIBDetId.h"
 #include "DataFormats/SiStripDetId/interface/TIDDetId.h"

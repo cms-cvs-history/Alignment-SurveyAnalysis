@@ -1,5 +1,6 @@
 #include "Alignment/CommonAlignment/interface/SurveyDet.h"
 #include "Alignment/TrackerAlignment/interface/AlignableTracker.h"
+#include "Alignment/TrackerAlignment/interface/TrackerAlignableId.h"
 #include "FWCore/ParameterSet/interface/ParameterSet.h"
 #include "FWCore/Framework/interface/EventSetup.h"
 #include "FWCore/Framework/interface/ESHandle.h"
@@ -24,8 +25,10 @@ void SurveyInputTrackerFromDB::beginJob(const edm::EventSetup& setup )
   uIdMap = dataReader.UniqueIdMap();
 
   edm::ESHandle<GeometricDet>  geom;
-  setup.get<IdealGeometryRecord>().get(geom);	 
-  TrackerGeometry* tracker = TrackerGeomBuilderFromGeometricDet().build(&*geom);
+  setup.get<IdealGeometryRecord>().get(geom);	
+  edm::ESHandle<DDCompactView> cpv;
+  setup.get<IdealGeometryRecord>().get( cpv );
+  TrackerGeometry* tracker = TrackerGeomBuilderFromGeometricDet().build(&*cpv,&*geom);
   
   addComponent( new AlignableTracker( tracker ) );
   addSurveyInfo( detector() );
