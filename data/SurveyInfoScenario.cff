@@ -15,7 +15,7 @@ block SurveyInfoScenario =
 	
         // TEC+ 
 
-	PSet TECEndcap1 = {
+	PSet TEC1 = {
              
              double dX = -0.0908 double dY = -0.0412  double dZ = -0.1412  
              double phiXlocal = 0.000107 
@@ -76,7 +76,7 @@ block SurveyInfoScenario =
 
         // TEC- 
 
-   	PSet TECEndcap2 = {
+   	PSet TEC2 = {
 
              double dX = 0.0802 double dY = -0.0117  double dZ = -0.1617  
              double phiXlocal = -0.000105 
@@ -136,7 +136,7 @@ block SurveyInfoScenario =
   
         // TID+
 
-       PSet TIDEndcap1 = {
+       PSet TID1 = {
             
              double phiZlocal = -0.000475
              
@@ -150,7 +150,7 @@ block SurveyInfoScenario =
 
        // TID-
 
-        PSet TIDEndcap2 = {
+        PSet TID2 = {
             
              double phiZlocal = 0.000548
              
@@ -166,7 +166,7 @@ block SurveyInfoScenario =
        // FIXME Assuming very small rotation angles we rotate of -asin(n_y) ~ -n_y
        //       around x axis and of asin(n_x) ~ n_x around y axis  
 
-      //	PSet TIBHalfBarrel1 = {
+      //	PSet TIB1 = {
              
       //       double dZ = -0.13
 
@@ -194,7 +194,7 @@ block SurveyInfoScenario =
 
        // TIB-
  
-      //  PSet TIBHalfBarrel2 = {
+      //  PSet TIB2 = {
              
       //       double dZ = -0.46
 
@@ -222,5 +222,5 @@ block SurveyInfoScenario =
 
         // TOB
  
-        PSet TOBBarrel = { double dZ = -0.14 }
+        PSet TOBs = { double dZ = -0.14 }
 }
