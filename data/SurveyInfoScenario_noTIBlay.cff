@@ -166,59 +166,59 @@ block SurveyInfoScenario =
        // FIXME Assuming very small rotation angles we rotate of -asin(n_y) ~ -n_y
        //       around x axis and of asin(n_x) ~ n_x around y axis  
 
-      	PSet TIB1 = {
+      //	PSet TIB1 = {
              
-             double dZ = -0.13
+      //  double dZ = -0.13
 
-             PSet TIBLayer1 = {double dX = 0.08 double dY = -0.19 
-                                  double phiXlocal = -0.001863  
-                                  double phiYlocal = 0.001004  
-                                  double phiZlocal = 0.001188 }
+      //  PSet TIBLayer1 = {double dX = 0.08 double dY = -0.19 
+       //                      double phiXlocal = -0.001863  
+      //                       double phiYlocal = 0.001004  
+      //                       double phiZlocal = 0.001188 }
 
-             PSet TIBLayer2 = {double dX = 0.04 double dY = -0.20 
-                                  double phiXlocal = -0.002074  
-                                  double phiYlocal = 0.002385  
-                                  double phiZlocal = 0.001353 }
+      //  PSet TIBLayer2 = {double dX = 0.04 double dY = -0.20 
+      //                       double phiXlocal = -0.002074  
+      //                       double phiYlocal = 0.002385  
+      //                       double phiZlocal = 0.001353 }
 
-             PSet TIBLayer3 = {double dX = 0.07 double dY = -0.19 
-                                  double phiXlocal = -0.000430  
-                                  double phiYlocal = -0.000459  
-                                  double phiZlocal = 0.000274 }
+      //  PSet TIBLayer3 = {double dX = 0.07 double dY = -0.19 
+       //                       double phiXlocal = -0.000430  
+      //                        double phiYlocal = -0.000459  
+       //                       double phiZlocal = 0.000274 }
+ 
+       //  PSet TIBLayer4 = {double dX = 0.07 double dY = -0.20 
+        //                      double phiXlocal = 0.000001  
+        //                      double phiYlocal = 0.001262  
+        //                      double phiZlocal = 0.000000 } 
 
-             PSet TIBLayer4 = {double dX = 0.07 double dY = -0.20 
-                                  double phiXlocal = 0.000001  
-                                  double phiYlocal = 0.001262  
-                                  double phiZlocal = 0.000000 } 
-
-        }
+       // }
 
        // TIB-
  
-        PSet TIB2 = {
+        //PSet TIB2 = {
              
-             double dZ = -0.46
+        // double dZ = -0.46
 
-             PSet TIBLayer1 = {double dX = 0.03 double dY = -0.25 
-                                  double phiXlocal = 0.000141  
-                                  double phiYlocal = 0.000325  
-                                  double phiZlocal = -0.000091 }
+        // PSet TIBLayer1 = {double dX = 0.03 double dY = -0.25 
+         //                     double phiXlocal = 0.000141  
+         //                     double phiYlocal = 0.000325  
+         //                     double phiZlocal = -0.000091 }
 
-             PSet TIBLayer2 = {double dX = 0.05 double dY = -0.21 
-                                  double phiXlocal = 0.002088 
-                                  double phiYlocal = 0.000976 
-                                  double phiZlocal = -0.001371 }
+         //PSet TIBLayer2 = {double dX = 0.05 double dY = -0.21 
+         //                     double phiXlocal = 0.002088 
+          //                    double phiYlocal = 0.000976 
+         //                     double phiZlocal = -0.001371 }
 
-             PSet TIBLayer3 = {double dX = 0.03 double dY = -0.18 
-                                  double phiXlocal = 0.001273  
-                                  double phiYlocal = -0.000098  
-                                  double phiZlocal = -0.000823 }
+         //PSet TIBLayer3 = {double dX = 0.03 double dY = -0.18 
+         //                     double phiXlocal = 0.001273  
+         //                     double phiYlocal = -0.000098  
+          //                    double phiZlocal = -0.000823 }
 
-             PSet TIBLayer4 = {double dX = 0.02 double dY = -0.19 
-                                 double phiXlocal = 0.000250  
-                                 double phiYlocal = -0.000277  
-                                 double phiZlocal = -0.000165 } 
+        // PSet TIBLayer4 = {double dX = 0.02 double dY = -0.19 
+         //                    double phiXlocal = 0.000250  
+         //                    double phiYlocal = -0.000277  
+         //                    double phiZlocal = -0.000165 } 
 
-          }
+         // }
 
         // TOB
  
