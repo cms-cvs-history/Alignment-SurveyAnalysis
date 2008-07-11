@@ -5,7 +5,7 @@ block dbSetup =
   using CondDBSetup
 
   string connect  = "sqlite_file:../Alignments.db"    
-  untracked string timetype = "runnumber"    
+  string timetype = "runnumber"    
 }
 
 block surveyValueRcd = { string record = "TrackerSurveyRcd"      string tag = "valueTag" }

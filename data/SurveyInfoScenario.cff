@@ -224,3 +224,170 @@ block SurveyInfoScenario =
  
         PSet TOBs = { double dZ = -0.14 }
 }
+
+block SurveyInfoScenario_noTIBlay =
+{
+        // General settings (stolen from Alignment/TrackerAlignment/data/Scenarios.cff)
+
+        untracked bool dumpBefore  = false  // This is actually the default
+	untracked bool dumpAfter   = false  // This is actually the default
+	untracked bool saveToDbase = false  // This is actually the default
+	
+	string distribution = 'fixed'
+	int32 seed = 1234567
+	bool setError = false
+	
+        // TEC+ 
+
+	PSet TEC1 = {
+             
+             double dX = -0.0908 double dY = -0.0412  double dZ = -0.1412  
+             double phiXlocal = 0.000107 
+             double phiYlocal = 0.000204 
+             double phiZlocal = 0.000179
+
+             PSet TECDisk1 = {double dX = 0.0069 double dY = 0.0208  double dZ = 0.0019 
+                                  double phiXlocal = -0.000005  
+                                  double phiYlocal = 0.000067  
+                                  double phiZlocal = 0.000010 }
+
+             PSet TECDisk2 = {double dX = 0.0214  double dY = 0.0261  double dZ = 0.0002  
+                                  double phiXlocal = 0.000049
+                                  double phiYlocal = -0.000017 
+                                  double phiZlocal = 0.000040 }
+
+             PSet TECDisk3 = {double dX = 0.0073  double dY = 0.0014  double dZ = 0.0083  
+                                  double phiXlocal = -0.000067
+                                  double phiYlocal = 0.000068 
+                                  double phiZlocal = -0.000022 } 
+
+             PSet TECDisk4 = {double dX = -0.0101 double dY = -0.0043  double dZ = -0.0002  
+                                  double phiXlocal = -0.000040
+                                  double phiYlocal = 0.000141 
+                                  double phiZlocal = 0.000053 } 
+
+             PSet TECDisk5 = {double dX = 0.0035 double dY = -0.0339  double dZ = -0.0053 
+                                  double phiXlocal = -0.000125
+                                  double phiYlocal = 0.000032 
+                                  double phiZlocal = 0.000160 }  
+             
+             PSet TECDisk6 = {double dX = -0.0304 double dY = -0.0754  double dZ = 0.0012 
+                                  double phiXlocal = -0.000298
+                                  double phiYlocal = 0.000181 
+                                  double phiZlocal = 0.000069 } 
+
+             PSet TECDisk7 = {double dX = -0.0274 double dY = -0.0451 double dZ = 0.0061 
+                                  double phiXlocal = -0.000198
+                                  double phiYlocal = 0.000158 
+                                  double phiZlocal = -0.000128 }   
+
+             PSet TECDisk8 = {double dX = -0.0536 double dY = -0.0147 double dZ = -0.0071 
+                                  double phiXlocal = -0.000045
+                                  double phiYlocal = 0.000189 
+                                  double phiZlocal = -0.000053 } 
+
+             PSet TECDisk9 = {double dX = -0.0129 double dY = 0.0168 double dZ = -0.0144 
+                                  double phiXlocal = 0.000098
+                                  double phiYlocal = -0.000050 
+                                  double phiZlocal = -0.000052 } 
+
+            // PSet EndcapBackDisk = {double dX = -0.0514 double dY = -0.0021 double dZ = 0.0091 
+            //                       double phiXlocal = 0.000063
+            //                       double phiYlocal = 0.000111 
+            //                       double phiZlocal = -0.000077 } 
+      
+        }
+
+        // TEC- 
+
+   	PSet TEC2 = {
+
+             double dX = 0.0802 double dY = -0.0117  double dZ = -0.1617  
+             double phiXlocal = -0.000105 
+             double phiYlocal = 0.000385 
+             double phiZlocal = 0.001152
+             
+             PSet TECDisk1 = {double dX = -0.0222 double dY = -0.0098 double dZ = -0.0212
+                                  double phiXlocal = 0.000019  
+                                  double phiYlocal = -0.000214 
+                                  double phiZlocal = 0.000361 }
+
+             PSet TECDisk2 = {double dX = -0.0089 double dY = -0.0053 double dZ = 0.0159 
+                                  double phiXlocal = 0.000028
+                                  double phiYlocal = -0.000092 
+                                  double phiZlocal = 0.000444 }
+
+             PSet TECDisk3 = {double dX = -0.0133 double dY = 0.0143 double dZ = -0.0112
+                                  double phiXlocal = -0.000042
+                                  double phiYlocal = -0.000123 
+                                  double phiZlocal = 0.000362 }
+
+             PSet TECDisk4 = {double dX = -0.0077 double dY = -0.0130 double dZ = -0.0014
+                                  double phiXlocal = 0.000046
+                                  double phiYlocal = -0.000110 
+                                  double phiZlocal = 0.000164 }
+
+             PSet TECDisk5 = {double dX = -0.0176 double dY = -0.0299 double dZ = -0.0155
+                                  double phiXlocal = 0.000070
+                                  double phiYlocal = -0.000057 
+                                  double phiZlocal = 0.000082 }
+
+             PSet TECDisk6 = {double dX = -0.0264 double dY = 0.0087 double dZ = -0.0123
+                                  double phiXlocal = -0.000068
+                                  double phiYlocal = -0.000097 
+                                  double phiZlocal = 0.000080 }
+
+             PSet TECDisk7 = {double dX = 0.0248 double dY = -0.0419 double dZ = 0.0142
+                                  double phiXlocal = 0.000176
+                                  double phiYlocal = 0.000153 
+                                  double phiZlocal = -0.000197 }
+ 
+             PSet TECDisk8 = {double dX = -0.0318 double dY = 0.0140  double dZ = 0.0139
+                                  double phiXlocal = -0.000029
+                                  double phiYlocal = -0.000115  
+                                  double phiZlocal = -0.000356 }
+
+             PSet TECDisk9 = {double dX = 0.0852 double dY = 0.0488 double dZ = 0.0324
+                                  double phiXlocal = -0.000204
+                                  double phiYlocal = 0.000322 
+                                  double phiZlocal = -0.000512 } 
+
+             // PSet EndcapBackDisk = {double dX = 0.0074  double dY = -0.0085 double dZ = -0.0177
+             //                       double phiXlocal = 0.000026
+             //                       double phiYlocal = 0.000018 
+             //                       double phiZlocal = -0.000596 } 
+        } 
+  
+        // TID+
+
+       PSet TID1 = {
+            
+             double phiZlocal = -0.000475
+             
+             PSet TIDDisk1 = {double dX = -0.10 double dY = -0.15  double dZ = 0.03 } 
+
+             PSet TIDDisk2 = {double dX = -0.09 double dY = -0.20  double dZ = 0.00 }  
+      
+             PSet TIDDisk3 = {double dX = -0.09 double dY = -0.15  double dZ = 0.06 }  
+    
+       }
+
+       // TID-
+
+        PSet TID2 = {
+            
+             double phiZlocal = 0.000548
+             
+             PSet TIDDisk1 = {double dX = -0.10 double dY = -0.15  double dZ = -0.57 } 
+
+             PSet TIDDisk2 = {double dX = -0.09 double dY = -0.19  double dZ = -0.60 }  
+      
+             PSet TIDDisk3 = {double dX = -0.09 double dY = -0.22  double dZ = -0.58 }  
+    
+       }
+
+      
+        // TOB
+ 
+        PSet TOBs = { double dZ = -0.14 }
+}
