@@ -13,18 +13,6 @@
    <flags EDM_PLUGIN=1>
 </library>
 
-<library file=TestConverter.cpp name=testSurveyConverter>
-  <flags EDM_PLUGIN=1>
-</library>
-
-<library file=TestConverter2.cpp name=testSurveyConverter2>
-  <flags EDM_PLUGIN=1>
-</library>                                                                                
-
-<library file=TestIdealGeometry.cpp name=testIdeal>
-  <flags EDM_PLUGIN=1>
-</library>
-
-<library file=TestIdealGeometry2.cpp name=testIdeal2>
-  <flags EDM_PLUGIN=1>
+<library name=AlignmentSurveyAnalysisTest2 file=*.cpp>
+   <flags EDM_PLUGIN=1>
 </library>
