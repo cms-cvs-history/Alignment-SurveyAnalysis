@@ -7,7 +7,7 @@
 # at Paul Scherrer Institut prior to the insertion of the pixel barrel. Each
 # line is the result of one image covering two neighbouring modules along a
 # ladder. Given are the coordinates in the frame of the photo in pixels for
-# the four fiducial marks (1) to (4). These coordinates were obtained using a
+# the four fiducial marks (0) to (3). These coordinates were obtained using a
 # pattern recognition software at PSI configured to search for the crosshair
 # marks on the sensor surface. The precision of these marks on the sensor are
 # better than 0.1um (controlled by the etching process). The error is
@@ -16,31 +16,34 @@
 # the images may vary as the distance was difficult to control.
 #
 #   -------------++--------------
-#           (3) +||+ (2)  
+#           (1) +||+ (2)  
 #                ||
-#    left module || right module
-#                ||
-#                ||
-#           (4) +||+ (1)     
-#   -------------++--------------
+#    left module || right module       0-------> y
+#                ||                    |
+#                ||                    |
+#           (0) +||+ (3)               V
+#   -------------++--------------      x 
 #
-# The distance between two marks on one sensor (eg. (1) and (2)) is exactly
+# The y coordinate is parallel to z in the global CMS frame and parallel to v
+# in the local CMS frame of a module. The x coordinate is parallel to the
+# local CMS frame of a module and hence points to r_phi.
+# The distance between two marks on one sensor (eg. (0) and (1)) is exactly
 # 1.82000cm
 # 
 # The fields contain the following data (all units in image pixels):
 #
 # rawID1 : ID of the first (left) module in the image
-# v_1_1  : v coordinate of (3)
-# u_1_1  : u coordinate of (3)
-# v_2_1  : v coordinate of (4)
-# u_2_1  : u coordinate of (4)
+# y_1_1  : y coordinate of (0)
+# x_1_1  : x coordinate of (0)
+# y_2_1  : y coordinate of (1)
+# x_2_1  : x coordinate of (1)
 # rawID2 : ID of the second (right) module in the image
-# v_1_2  : v coordinate of (2)
-# u_1_2  : u coordinate of (2)
-# v_2_2  : v coordinate of (1)
-# u_2_2  : u coordinate of (1)
-# sigma_v: gaussian error of measurement of the v coordinate
-# sigma_u: gaussian error of measurement of the u coordinate
+# y_1_2  : y coordinate of (2)
+# x_1_2  : x coordinate of (2)
+# y_2_2  : y coordinate of (3)
+# x_2_2  : x coordinate of (3)
+# sigma_y: gaussian error of measurement of the y coordinate
+# sigma_x: gaussian error of measurement of the x coordinate
 #
 # Some coordinates have negative values. This is the case when some parts of
 # the support structure were obstructing the view and the camera was turned
@@ -58,7 +61,8 @@
 # Frank Meier          : frank.meier@psi.ch
 #
 #
-# rawID1    v_1_1     u_1_1     v_2_1     u_2_1     rawID2      v_1_2     u_1_2     v_2_2     u_2_2     sigma_v   sigma_u
+#           -------(0)-------   -------(1)-------               -------(2)-------   -------(3)-------
+# rawID1    y_1_1     x_1_1     y_2_1     x_2_1     rawID2      y_1_2     x_1_2     y_2_2     x_2_2     sigma_y   sigma_x
 # -------   -------   -------   -------   -------   ---------   -------   -------   -------   -------   -------   -------
 302057220   1383.92   2936.47   1382.93    807.75   302057224   1500.31   2920.63   1487.24    792.53     0.175     0.175 
 302057224   1422.66   2890.89   1410.75    759.17   302057228   1535.37   2918.81   1527.33    787.46     0.175     0.175 
